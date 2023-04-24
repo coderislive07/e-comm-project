@@ -1,0 +1,8 @@
+.layout{
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 90px;
+    
+}

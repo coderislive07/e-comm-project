@@ -1,0 +1,135 @@
+.search-modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    background-color: white;
+    transform: translateY(100%);
+    animation: slideSearchWindow 0.5s ease forwards;
+}
+.form-field {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin-top: 90px;
+}
+input {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    font-weight: 600;
+    color: #212121;
+    outline: none;
+    border: none;
+    text-transform: uppercase;
+    height: 80px;
+    font-size: 48px;
+   
+}
+input::placeholder{
+    color: #212121;
+}
+.close-btnn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    right: 40px;
+    font-size: 20px;
+    
+}
+.search-result-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.start-msg {
+    text-align: center;
+    margin-top: 20px;
+    color: rgba(0, 0, 0, 0.5);
+}
+.search-resultss {
+    height: calc(100vh - 160px);
+    overflow: auto;
+    margin: 20px 0;
+}
+.search-result-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    
+}
+.search-result-item:hover{
+    background-color: #777777;
+}
+.imgg-container {
+    background-color: rgba(0, 0, 0, 0.05);
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+}
+.prodd-details {
+    overflow: hidden;
+}
+.namee {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 16px;
+    line-height: 1;
+    margin-bottom: 10px;
+    font-weight: 600;
+    display: block;
+    color: black;
+}
+.desce {
+    font-size: 14px;
+    line-height: 1;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.5);
+}
+.imgg-container img{
+    width: 100%;
+    height: 100%;
+}
+
+
+@keyframes slideSearchWindow {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+@media screen and (max-width:990px){
+    .form-field{
+        padding: 10px 50px;
+    }
+    input{
+        height: 50px;
+        font-size: 20px;
+    }
+    .close-btn{
+        right: 20px;
+        font-size: 25px;
+    }
+    .search-result-content{
+        max-width: calc(100% - 20px)
+    }
+    .search-resultss{
+        height: calc(100vh - 160px);
+    }
+}
