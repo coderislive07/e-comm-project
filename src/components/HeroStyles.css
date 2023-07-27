@@ -94,10 +94,7 @@
 }
 @media screen and (max-width:490px){
     .hero_content p{
-        margin-top: 60px;
-        font-size: 11px;
-        width: 75%;
-        line-height: 12px;
+        display: none;
     }
 }
 
