@@ -58,3 +58,10 @@
         height: 200px;
     }
 }
+
+@media screen and (max-width:590px){
+    .headingggg{
+        padding: 12px 6px;
+        font-size: 16px;
+    }
+}

@@ -29,10 +29,12 @@
     gap: 2rem;
 }
 .hero_content p{
-    font-family: 'Dancing Script', sans-serif;
+    font-family: 'poppins', sans-serif;
     text-transform: capitalize;
-    font-weight: 400;
+    font-weight: 200;
+    font-size: 12px;
     width: 75%;
+    color: rgba(255, 255, 255, 0.293);
 }
 .right h3{
     font-size: 1.3rem;
