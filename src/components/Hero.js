@@ -21,7 +21,7 @@ function hero() {
          <div className='left'>
             <h1>We <br />Design  <br />for  <br />Robots</h1>
             <div className='hero_content'>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem, totam rem aperiam, eaque ipsa quae ab illo inventore.</p>
+                <p>"Level up your gaming prowess with our cutting-edge computer gaming equipment - where victory meets innovation!"</p>
             </div>
          </div>
         </div>
