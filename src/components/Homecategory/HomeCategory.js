@@ -22,7 +22,7 @@ const Hcategory = () => {
                     onClick={() => navigate(`/category/${item.id}`)}
                     
                 >
-                    <img src={process.env.REACT_APP_DEV_URL + item.attributes.img.data.attributes.url} alt="" />
+                    <img src={item.attributes.img.data.attributes.url} alt="" />
                     <span className="headingggg">{item.attributes.title}</span>
                 </div>
              
