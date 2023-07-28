@@ -52,7 +52,7 @@ function SingleProduct() {
           <div className="leftt">
             <img
               src={
-                process.env.REACT_APP_DEV_URL +
+               
                 product.img.data[0].attributes.url
               }
               alt="productimage"

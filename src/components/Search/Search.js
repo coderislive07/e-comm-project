@@ -41,7 +41,7 @@ const Search = ({setShowSearch}) => {
                 setShowSearch(false)
               }}>
                 <div className="imgg-container">
-                  <img src={process.env.REACT_APP_DEV_URL +
+                  <img src={
                     item.attributes.img.data[0].attributes.url} alt="" />
                 </div>
                 <div className="prodd-detail">

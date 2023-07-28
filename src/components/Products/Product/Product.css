@@ -11,6 +11,7 @@
 } */
 .product-card:hover{
     box-shadow: 0 3px 10px rgba(2, 188, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.036);
 }
 .thumbnail{
     width: 100%;
@@ -94,5 +95,13 @@
     }
     .price{
         font-size: 18px;
+    }
+}
+@media screen and (max-width:490px){
+    .product-card{
+       padding: 3px;
+    }
+    .product-card .name{
+        margin-bottom: 2px;
     }
 }
