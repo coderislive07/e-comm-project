@@ -37,14 +37,6 @@ function SingleProduct() {
   const product = data.data[0].attributes;
 
 
-
-
- 
-
-
-
-
-
   return (
     <div className="single-product-main-content">
       <div className="layoutt">

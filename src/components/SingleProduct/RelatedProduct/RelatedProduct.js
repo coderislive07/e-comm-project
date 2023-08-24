@@ -1,4 +1,5 @@
 import { useContext, useEffect } from "react";
+import "./RelatedProducts.css"
 import useFetch from "../../../hooks/useFetch"
 import Products from "../../Products/Products"
 import { Context } from "../../../utils/context";

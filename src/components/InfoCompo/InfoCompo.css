@@ -3,13 +3,18 @@
     grid-template-columns: 1fr 1fr;
     justify-content: space-between;
     align-items: center;
+    height: 600px;
+    width: 100%;
+   
 }
-.containers{
-    background-color: rgba(255, 255, 255, 0.075);
+.in-left{
+    height: 100%;
 }
 .in-left img{
-   object-fit: cover;
     height: 100%;
+    width: 100%;
+   object-fit: cover;
+    
 }
 .in-right{
     padding-left: 50px;
@@ -25,8 +30,11 @@
 
 
 @media screen and (max-width:1400px){
-    .in-right h1{
-        font-size: 2.4rem;
+    .info-container{
+        height: 100%;
+    }
+    .in-right {
+        padding-left: 20px;
     }
     .in-right p{
         font-size: 15px;
@@ -39,12 +47,12 @@
     }
     .in-right{
         height: 130px;
-        padding-left: 20px;
-        padding-bottom: 40px;
+        padding-left: 0px;
+       
     }
     .in-right h1{
         padding-top: 10px;
-        font-size: 1.5rem;
+        font-size: 2.5rem;
     }
     .in-right p{
         font-size: 14px;
@@ -58,5 +66,9 @@
         font-size: 11px;
         font-weight: 200;
         line-height: 12px;
+    }
+    .in-right h1{
+        
+        font-size: 1.5rem;
     }
 }
