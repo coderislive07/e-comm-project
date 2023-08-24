@@ -6,7 +6,7 @@ import './homecategory.css'
 const Hcategory = () => {
 
     const { state } = useContext(Context);
-   console.log("hjghfgj",state);
+   
     const navigate = useNavigate();
 
    
