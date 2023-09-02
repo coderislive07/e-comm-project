@@ -35,7 +35,7 @@ const Navbar = () => {
   const [showCart, setShowCart] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   // const handleClick = () => setClick(!click)
-alert("This project is only for project purpose so i am using free plan of strapi for backend that could fetch data slow please wait for it or refresh after 30 to 40s... ")
+
   const { cartCount } = useContext(Context);
 
   //my code start
