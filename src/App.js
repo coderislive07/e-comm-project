@@ -14,6 +14,22 @@ import SuccessPage from './components/SuccessPage/SuccessPage';
 
 function App() {
 
+useEffect(() => {
+    // Check if the alert has already been shown
+    const hasAlertBeenShown = localStorage.getItem('alertShown');
+
+    if (!hasAlertBeenShown) {
+      // If it hasn't been shown, display the alert and set the flag
+      alert("This project is only for project purpose so i am using free plan of strapi for backend that could fetch data slow please wait for it or refresh after 30 to 40s...");
+      localStorage.setItem('alertShown', 'true');
+    }
+  }, []);
+
+  
+  useEffect(() => {
+    alert()
+  },[])
+
   const ScrollToTop = () => {
     const { pathname } = useLocation();
   
