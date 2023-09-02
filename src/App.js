@@ -26,9 +26,6 @@ useEffect(() => {
   }, []);
 
   
-  useEffect(() => {
-    alert()
-  },[])
 
   const ScrollToTop = () => {
     const { pathname } = useLocation();
