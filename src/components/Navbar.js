@@ -55,7 +55,7 @@ const Navbar = () => {
   const menuList = nav_links.map(({ url, title }, index) => {
     return (
       <li key={index}>
-        <NavLink to={url}  className="menu-links nav-link-ltr">
+        <NavLink to={url} className="menu-links nav-link-ltr">
           {title}
         </NavLink>
       </li>
@@ -95,13 +95,12 @@ const Navbar = () => {
               <TbSearch />
             </span>
             <span
-              className="cart-icon"
               onClick={() => {
                 setShowCart(true);
               }}
             >
               <BsCart />
-              {!!cartCount && <span>{cartCount}</span>}
+              {!!cartCount && <span className="cart-num">{cartCount}</span>}
             </span>
             <div className="grid-icon">
               <span onClick={handleClick}>

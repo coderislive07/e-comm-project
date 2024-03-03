@@ -7,7 +7,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 9999;
+    z-index: 9990;
     backdrop-filter: blur(15px);
 }
 
@@ -96,16 +96,14 @@
 .cart-icon{
     position: relative;
 }
-.cart-icon span{
+.nav-icons .cart-num{
     position: absolute;
-    width: 27px;
-    height: 27px;
-    border-radius: 50%;
-    left: 0;
-    top: 6px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 10px;
+    font-size: 13px;
+    background: rgb(1, 103, 141);
+    top: 13px;
+    right: 25px;
+    padding: 3px 4px;
+    border-radius: 20px;
 }
 
 @media screen and (max-width:1240px) {
@@ -126,7 +124,9 @@
         font-size: 31px;
     }
 
-
+    .nav-icons .cart-num{
+        right: 110px;
+    }
 
     .menu {
         position: absolute;
@@ -167,6 +167,9 @@
     }
     .logo h1{
         font-size: 28px;
+    }
+    .nav-icons .cart-num{
+        right: 80px;
     }
 }
 

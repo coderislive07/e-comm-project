@@ -6,49 +6,55 @@ import { FiTwitter } from "react-icons/fi";
 import { ImPinterest2 } from "react-icons/im";
 import RelatedProduct from "./RelatedProduct/RelatedProduct";
 
+import Notification from "../Notification";
+
 import useFetch from "../../hooks/useFetch";
 import { useParams } from "react-router-dom";
 import { Context } from "../../utils/context";
 
 function SingleProduct() {
   const [count, setCount] = useState(1);
+  // notification block
+  const [showNotification, setShowNotification] = useState(false);
+
   const increment = () => {
     setCount((previouscount) => previouscount + 1);
   };
   const decrement = () => {
     setCount((previouscount) => {
-      if (previouscount === 1){
+      if (previouscount === 1) {
         return 1;
-      }else{
+      } else {
         return previouscount - 1;
-      };
+      }
     });
   };
 
   const { id } = useParams();
   const { data } = useFetch(`/api/products?populate=*&[filters][id]=${id}`);
 
-  const {handleAddToCart} = useContext(Context);
-
-
-  
+  const { handleAddToCart } = useContext(Context);
 
   if (!data) return;
   const product = data.data[0].attributes;
 
+  const AddToCartNotification = () => {
+    // Logic for adding product to the cart
+
+    // Show the notification
+    setShowNotification(true);
+  };
+
+  const handleNotificationClose = () => {
+    setShowNotification(false);
+  };
 
   return (
     <div className="single-product-main-content">
       <div className="layoutt">
         <div className="single-product-page">
           <div className="leftt">
-            <img
-              src={
-               
-                product.img.data[0].attributes.url
-              }
-              alt="productimage"
-            />
+            <img src={product.img.data[0].attributes.url} alt="productimage" />
           </div>
 
           <div className="rightt">
@@ -58,19 +64,33 @@ function SingleProduct() {
 
             <div className="cart_buttons">
               <div className="quantity_buttons">
-                <span onClick={decrement} className="incdec_btns">-</span>
+                <span onClick={decrement} className="incdec_btns">
+                  -
+                </span>
                 <span>{count}</span>
-                <span onClick={increment} className="incdec_btns">+</span>
+                <span onClick={increment} className="incdec_btns">
+                  +
+                </span>
               </div>
 
-              <button className="add_to_cart_button" onClick={() => {
-                handleAddToCart(data.data[0], count)
-                setCount(1);
-                alert("Product added in your cart")
-              }}>
+              <button
+                className="add_to_cart_button"
+                onClick={() => {
+                  handleAddToCart(data.data[0], count);
+                  setCount(1);
+                  AddToCartNotification();
+                }}
+              >
                 <FaCartArrowDown />
                 ADD TO CART
               </button>
+              {/* Notification component */}
+              {showNotification && (
+                <Notification
+                  message="Product added to cart!"
+                  onClose={handleNotificationClose}
+                />
+              )}
             </div>
 
             <span className="divider" />
@@ -92,8 +112,10 @@ function SingleProduct() {
           </div>
         </div>
       </div>
-      <RelatedProduct productId={id} categoryId={product.categories.data[0].id}/>
-      
+      <RelatedProduct
+        productId={id}
+        categoryId={product.categories.data[0].id}
+      />
     </div>
   );
 }
