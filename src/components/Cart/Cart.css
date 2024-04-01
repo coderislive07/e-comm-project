@@ -89,15 +89,16 @@ justify-content: center;
 cursor: pointer;
 font-size: 13px;
 color: white;
-background: rgb(1, 103, 141);
-
+background: black;
+border-radius: 20px;
+transition: .2s ease;
 }
 .empty_cart span{
     color: black;
 }
 
 .return-cta:hover{
-    background-color:  rgba(2, 188, 255);
+    background-color:  rgb(63, 63, 63);
 }
 
 

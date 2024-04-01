@@ -1,12 +1,11 @@
 import React, { useEffect, useContext, useState } from "react";
 import Hcategory from "../components/Homecategory/HomeCategory";
-// import Hero from "../components/Hero";
 import Products from "../components/Products/Products";
 import "./home.css";
 import { fetchDataFromApi } from "../utils/api";
 import { Context } from "../utils/context";
-import InfoCompo from "../components/InfoCompo/InfoCompo";
 import Carousal from "../components/Caraousal/Carousal";
+import LedSection from "../components/LedSection/LedSection";
 
 const Home = () => {
   const { setstate } =
@@ -38,12 +37,11 @@ const Home = () => {
 
   return (
     <div>
-      {/* <Hero /> */}
       <Carousal />
       <div className="main-content new-container">
         <div className="layout">
           <Hcategory />
-          <InfoCompo />
+          <LedSection />
           <Products headingText="All Products" />
         </div>
       </div>

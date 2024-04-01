@@ -1,0 +1,72 @@
+.led-section{
+    height: 85%;
+    width: 100%;
+}
+.led-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+}
+.led-text{
+    padding: 20px 20px;
+}
+.led-text p{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 30px;
+    font-size: 13px;
+    font-weight: lighter;
+}
+.led-container .led-image{
+    display: flex;
+    justify-content: end;
+  
+}
+.led-container .led-image img:hover{
+    transform: scale(1.1);
+}
+.led-container .led-image img{
+    object-fit: contain;
+    width: 600px;
+    transition: transform 0.3s ease;
+}
+
+
+@media screen and (max-width:1400px){
+    .led-container .led-image img{
+        
+        width: 400px;
+    }
+}
+
+@media screen and (max-width:990px){
+    .led-container{
+       
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    .led-text{
+        order: 2;
+    }
+    .led-container .led-image{
+        
+        justify-content: center;
+        
+    }
+    .led-container .led-image img{
+        width: 90%;
+    }
+    
+}
+@media screen and (max-width:490px){
+    .led-text{
+        padding: 0px;
+    }
+    .led-text h1{
+        font-size: 17px;
+    }
+    .led-text p{
+        font-size: 11px;
+        padding: 5px 0;
+    }
+}
