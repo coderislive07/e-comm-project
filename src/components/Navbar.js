@@ -41,7 +41,7 @@ const Navbar = () => {
   //my code start
   const [color, setColor] = useState(false);
   const changeColor = () => {
-    if (window.scrollY >= 800) {
+    if (window.scrollY >= 90) {
       setColor(true);
     } else {
       setColor(false);
@@ -72,7 +72,7 @@ const Navbar = () => {
         <div className="nav-wrapper">
           <div className="logo" onClick={() => navigate("/")}>
             <h1>
-              ZOCO-<span className="xxx">X</span>
+              ZOC-<strong className="xxx">X</strong>
             </h1>
           </div>
 

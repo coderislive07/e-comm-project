@@ -8,6 +8,7 @@
     z-index: 10000;
     display: flex;
     justify-content: flex-end;
+    
 }
 .opac_layer{
     background: rgba(0, 0, 0, 0.5);
@@ -16,6 +17,8 @@
         left: 0;
         width: 100%;
         height: 100%;
+        filter: blur(200px);
+        
 }
 .cart_content{
     width: 340px;

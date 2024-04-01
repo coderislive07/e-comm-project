@@ -8,7 +8,7 @@
     top: 0;
     left: 0;
     z-index: 9990;
-    backdrop-filter: blur(15px);
+    /* backdrop-filter: blur(15px); */
 }
 
 .nav-wrapper{
@@ -50,7 +50,7 @@
     margin: 0px 10px;
     display: inline-block;
     position: relative;
-    opacity: 0.75;
+    opacity: 0.85;
 }
 .menu-links:hover{
     opacity: 1;
@@ -90,6 +90,7 @@
 }
 
 .navbar-bg{
+    backdrop-filter: blur(15px);
    transition: .3s;
 }
 
