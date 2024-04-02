@@ -29,37 +29,37 @@ const AppContext = ({ children }) => {
   }, [location]);
 
   //real code*******************************************************************************
-  // useEffect(() => {
-  //   //cart count no. on icon
-  //   let count = 0;
-  //   cartItems?.map((item) => (count += item.attributes.quantity));
-  //   setCartCount(count);
-
-  //   //subtotal
-  //   let subTotal = 0;
-  //   cartItems.map(
-  //     (item) => (subTotal += item.attributes.price * item.attributes.quantity)
-  //   );
-  //   setCartSubTotal(subTotal);
-  // }, [cartItems]);
-  //*************************************************************************************************
   useEffect(() => {
     //cart count no. on icon
     let count = 0;
-    if (cartItems) {
-      cartItems.forEach((item) => (count += item.attributes.quantity));
-    }
+    cartItems?.map((item) => (count += item.attributes.quantity));
     setCartCount(count);
 
     //subtotal
     let subTotal = 0;
-    if (cartItems) {
-      cartItems.forEach(
-        (item) => (subTotal += item.attributes.price * item.attributes.quantity)
-      );
-    }
+    cartItems.map(
+      (item) => (subTotal += item.attributes.price * item.attributes.quantity)
+    );
     setCartSubTotal(subTotal);
   }, [cartItems]);
+  //*************************************************************************************************
+  // useEffect(() => {
+  //   //cart count no. on icon
+  //   let count = 0;
+  //   if (cartItems) {
+  //     cartItems.forEach((item) => (count += item.attributes.quantity));
+  //   }
+  //   setCartCount(count);
+
+  //   //subtotal
+  //   let subTotal = 0;
+  //   if (cartItems) {
+  //     cartItems.forEach(
+  //       (item) => (subTotal += item.attributes.price * item.attributes.quantity)
+  //     );
+  //   }
+  //   setCartSubTotal(subTotal);
+  // }, [cartItems]);
 
   const handleAddToCart = (product, quantity) => {
     let items = [...cartItems];
