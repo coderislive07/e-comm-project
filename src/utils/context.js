@@ -11,13 +11,13 @@ const AppContext = ({ children }) => {
   const [cartSubTotal, setCartSubTotal] = useState(0);
 
   //code for saving state to local storage
-  useEffect(() => {
-    const value = window.localStorage.getItem("my cart");
-    if (cartItems !== null) setCartItems(JSON.parse(value));
-  }, []);
-  useEffect(() => {
-    window.localStorage.setItem("my cart", JSON.stringify(cartItems));
-  }, [cartItems]);
+  // useEffect(() => {
+  //   const value = window.localStorage.getItem("my cart");
+  //   if (cartItems !== null) setCartItems(JSON.parse(value));
+  // }, []);
+  // useEffect(() => {
+  //   window.localStorage.setItem("my cart", JSON.stringify(cartItems));
+  // }, [cartItems]);
   //
   //
   //
@@ -43,23 +43,6 @@ const AppContext = ({ children }) => {
     setCartSubTotal(subTotal);
   }, [cartItems]);
   //*************************************************************************************************
-  // useEffect(() => {
-  //   //cart count no. on icon
-  //   let count = 0;
-  //   if (cartItems) {
-  //     cartItems.forEach((item) => (count += item.attributes.quantity));
-  //   }
-  //   setCartCount(count);
-
-  //   //subtotal
-  //   let subTotal = 0;
-  //   if (cartItems) {
-  //     cartItems.forEach(
-  //       (item) => (subTotal += item.attributes.price * item.attributes.quantity)
-  //     );
-  //   }
-  //   setCartSubTotal(subTotal);
-  // }, [cartItems]);
 
   const handleAddToCart = (product, quantity) => {
     let items = [...cartItems];
