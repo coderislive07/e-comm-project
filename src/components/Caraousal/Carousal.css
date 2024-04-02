@@ -24,8 +24,9 @@
 }
 
 .slide-text {
-  background: rgba(0, 0, 0, 0.5); /* Background color for text */
-  padding: 10px 20px;
+  font-weight: 500;
+   font-size: 50px;
+   transition: .2s ease;
 }
 
 .prev-btn,
@@ -47,4 +48,20 @@
 
 .next-btn {
   right: 10px;
+}
+@media screen and (max-width:990px){
+  .slide-text {
+    padding: 0px 60px;
+    font-weight: 600;
+     font-size: 35px;
+     text-align: left;
+  }
+}
+
+@media screen and (max-width:490px){
+  .slide-text {
+    
+    font-weight: 600;
+     font-size: 40px;
+  }
 }

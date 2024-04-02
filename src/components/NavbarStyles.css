@@ -2,13 +2,12 @@
 .navbar{
     display: flex;
     width: 100%;
-    height: 80px;
-    padding: 20px;
+    height: 60px;
+    padding: 5px;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 9990;
-    /* backdrop-filter: blur(15px); */
 }
 
 .nav-wrapper{
@@ -69,8 +68,6 @@
 .nav-link-ltr:hover::before {
     width: 100%;
 }
-
-
 
 .nav-icons{
     display: flex;
@@ -146,8 +143,6 @@
        
     }
 
-    
-
    .menu li{
     font-size: 1.8rem;
     margin-bottom: 30px;
@@ -157,9 +152,6 @@
     left: -100%;
     transition: .3s ease;
    }
-
-
-
 }
 
 @media screen and (max-width:700px){
@@ -168,6 +160,7 @@
     }
     .logo h1{
         font-size: 28px;
+        margin-left: 8px;
     }
     .nav-icons .cart-num{
         right: 80px;

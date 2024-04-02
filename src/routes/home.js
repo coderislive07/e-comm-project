@@ -6,6 +6,7 @@ import { fetchDataFromApi } from "../utils/api";
 import { Context } from "../utils/context";
 import Carousal from "../components/Caraousal/Carousal";
 import LedSection from "../components/LedSection/LedSection";
+import AddSection from "../components/AddSection/AddSection";
 
 const Home = () => {
   const { setstate } =
@@ -43,6 +44,7 @@ const Home = () => {
           <Hcategory />
           <LedSection />
           <Products headingText="All Products" />
+          <AddSection />
         </div>
       </div>
     </div>

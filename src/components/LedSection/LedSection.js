@@ -16,7 +16,11 @@ const LedSection = () => {
             Chromecast content streaming and works with “Hey Google” for
             convenient binge-watching experiences with family and friends.
           </p>
-          <h4>₹ 39,000</h4>
+          <div className="tv-price">
+            <h4>₹ 39,000</h4>
+            <span className="perice-percent">-50%*</span>
+          </div>
+          <button className="button-86">Shop Now</button>
         </div>
         <div className="led-image">
           <img src={smartTv} alt="tv image" />

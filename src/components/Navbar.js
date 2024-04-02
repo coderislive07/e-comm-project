@@ -72,7 +72,7 @@ const Navbar = () => {
         <div className="nav-wrapper">
           <div className="logo" onClick={() => navigate("/")}>
             <h1>
-              ZOC-<strong className="xxx">X</strong>
+              ZOCO-<strong className="xxx">X</strong>
             </h1>
           </div>
 

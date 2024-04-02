@@ -92,12 +92,12 @@
     cursor: pointer;
     font-size: 16px;
     color: white;
-    background: rgb(1, 103, 141);
-  
+    background: #003f83;
     flex-grow: unset;
+    transition: .2s ease;
 }
 .add_to_cart_button:hover{
-    background-color: rgba(2, 188, 255);
+    background-color: #0361c5;
     
 }
 svg {

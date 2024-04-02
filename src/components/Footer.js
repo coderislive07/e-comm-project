@@ -1,20 +1,14 @@
-import React from 'react';
-import './Footer.css';
+import React from "react";
+import "./Footer.css";
 
 const Footer = () => (
   <div className="gpt3__footer container">
-    <div className="gpt3__footer-heading">
-      <h1 className="gradient__text">Do you want to step in to the future before others</h1>
-    </div>
-
-    <div className="btn btnnn">
-      <p>CONTACT US</p>
-    </div>
-
     <div className="gpt3__footer-links">
       <div className="gpt3__footer-links_logo">
         <h1>ZOCO-X</h1>
-        <p>Website Created for Project Purpose, <br /> All Rights Reserved</p>
+        <p>
+          Website Created for Project Purpose, <br /> All Rights Reserved
+        </p>
       </div>
       <div className="gpt3__footer-links_div">
         <h4>Links</h4>
@@ -31,7 +25,7 @@ const Footer = () => (
       </div>
       <div className="gpt3__footer-links_div">
         <h4>Get in touch</h4>
-        <p>rajshashank178@gmail.com</p>
+        <p>shashankweb111@gmail.com</p>
         <p>9559821649</p>
         <p>Lucknow</p>
       </div>
@@ -44,4 +38,3 @@ const Footer = () => (
 );
 
 export default Footer;
-

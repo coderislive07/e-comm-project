@@ -11,15 +11,15 @@ const Carousal = () => {
   const images = [
     {
       url: image1,
-      text: "Slide 1 Text",
+      text: "Better Devices for Better Life",
     },
     {
       url: image2,
-      text: "Slide 2 Text",
+      text: "Technology for your Convenience",
     },
     {
       url: image3,
-      text: "Slide 3 Text",
+      text: "Gadgets at Affordable Prices",
     },
   ];
 
