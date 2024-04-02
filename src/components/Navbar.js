@@ -98,6 +98,7 @@ const Navbar = () => {
               onClick={() => {
                 setShowCart(true);
               }}
+              className="cart-icon"
             >
               <BsCart />
               {!!cartCount && <span className="cart-num">{cartCount}</span>}

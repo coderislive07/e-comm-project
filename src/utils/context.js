@@ -5,25 +5,36 @@ export const Context = createContext();
 
 const AppContext = ({ children }) => {
   const [state, setstate] = useState({ categories: null, products: null });
-  // const [products, setProducts] = useState();
-  // const [showCart, setShowCart] = useState(false);
+
   const [cartItems, setCartItems] = useState([]);
   const [cartCount, setCartCount] = useState(0);
   const [cartSubTotal, setCartSubTotal] = useState(0);
 
+  //code for saving state to local storage
+  useEffect(() => {
+    const value = window.localStorage.getItem("my cart");
+    if (cartItems !== null) setCartItems(JSON.parse(value));
+  }, []);
+  useEffect(() => {
+    window.localStorage.setItem("my cart", JSON.stringify(cartItems));
+  }, [cartItems]);
+  //
+  //
+  //
+
   //to come on top of the page
   const location = useLocation();
-   useEffect(() => {
-      window.scrollTo(0, 0);
+  useEffect(() => {
+    window.scrollTo(0, 0);
   }, [location]);
 
   useEffect(() => {
-  //cart count no. on icon
+    //cart count no. on icon
     let count = 0;
     cartItems?.map((item) => (count += item.attributes.quantity));
     setCartCount(count);
 
-  //subtotal 
+    //subtotal
     let subTotal = 0;
     cartItems.map(
       (item) => (subTotal += item.attributes.price * item.attributes.quantity)
@@ -58,7 +69,6 @@ const AppContext = ({ children }) => {
     }
     setCartItems(items);
   };
-
 
   return (
     <Context.Provider
