@@ -2,13 +2,17 @@ import React, { useState, useEffect } from "react";
 import "./Cart.css";
 import { GrClose } from "react-icons/gr";
 import { BsCartPlus } from "react-icons/bs";
+import { FaShoppingCart } from "react-icons/fa";
 
 const Cart = ({ setShowCart }) => {
   const [cartItems, setCartItems] = useState([]);
+  const [cartSubTotal, setCartSubTotal] = useState(0);
 
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem('cart')) || [];
     setCartItems(items);
+    const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    setCartSubTotal(total);
   }, []);
 
   return (
@@ -42,25 +46,36 @@ const Cart = ({ setShowCart }) => {
           </div>
         )}
         {!!cartItems?.length && (
-          <div className="cart-items">
-            {cartItems.map((item) => (
-              <div key={item.id} className="cart-item">
-                <img src={item.image} alt={item.name} className="item-image" />
-                <div className="item-details">
-                  <h3>{item.name}</h3>
-                  <p>Price: &#8377;{item.price.toLocaleString('en-IN')}</p>
-                  <p>Quantity: {item.quantity}</p>
+          <>
+            <div className="cart-items">
+              {cartItems.map((item) => (
+                <div key={item.id} className="cart-item">
+                  <img src={item.image} alt={item.name} className="item-image" />
+                  <div className="item-details">
+                    <h3>{item.name}</h3>
+                    <p>Price: &#8377;{item.price.toLocaleString('en-IN')}</p>
+                    <p>Quantity: {item.quantity}</p>
+                  </div>
                 </div>
-          
+              ))}
+            </div>
+            <div className="cart-footer">
+              <div className="subtotal">
+                <span className="text">Subtotal:</span>
+                <span className="text total">&#8377;{cartSubTotal.toLocaleString('en-IN')}</span>
               </div>
-              
-            ))}
-            <button className="checkout">Checkout </button>
-            
-          </div>
+              <div className="button">
+                <button className="checkout-cta cool-checkout-btn">
+                  <span className="btn-text">Checkout</span>
+                  <span className="btn-icon">
+                    <FaShoppingCart />
+                  </span>
+                </button>
+              </div>
+            </div>
+          </>
         )}
       </div>
-    
     </div>
   );
 };

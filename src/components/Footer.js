@@ -5,7 +5,7 @@ const Footer = () => (
   <div className="gpt3__footer container">
     <div className="gpt3__footer-links">
       <div className="gpt3__footer-links_logo">
-        <h1>ZOCO-X</h1>
+        <h1>TechNexus</h1>
         <p>
           Website Created for Project Purpose, <br /> All Rights Reserved
         </p>
