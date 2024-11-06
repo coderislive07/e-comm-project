@@ -6,6 +6,7 @@ import { TbSearch } from "react-icons/tb";
 import { FaTimes } from "react-icons/fa";
 import { FiGrid } from "react-icons/fi";
 import { BsCart } from "react-icons/bs";
+import { FiUser } from "react-icons/fi"; // Import the user icon
 import "./NavbarStyles.css";
 
 const nav_links = [
@@ -30,6 +31,7 @@ const nav_links = [
 const Navbar = () => {
   const navigate = useNavigate();
   const [clicked, setClicked] = useState(false);
+  const [username, setUsername] = useState('');
   const [showCart, setShowCart] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [cartCount, setCartCount] = useState(0);
@@ -40,7 +42,19 @@ const Navbar = () => {
       const cart = JSON.parse(localStorage.getItem('cart')) || [];
       const count = cart.reduce((total, item) => total + item.quantity, 0);
       setCartCount(count);
+      const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+      if (currentUser && currentUser.username) { // Added check for currentUser.username
+        setUsername(currentUser.username);
+      }
+
     };
+  
+    const handleLogout = () => {
+      localStorage.removeItem('currentUser');
+      setUsername('');
+      navigate('/login');
+    };
+
 
     updateCartCount();
     window.addEventListener('cartUpdated', updateCartCount);
@@ -74,6 +88,16 @@ const Navbar = () => {
     setClicked(!clicked);
   };
 
+  const handleSignIn = () => {
+    navigate("/Login/");
+    if (username) {
+      localStorage.removeItem('currentUser');
+      setUsername('');
+    } else {
+      navigate("/Login/");
+    }
+  };
+
   return (
     <>
       <div className={color ? "navbar navbar-bg" : "navbar"}>
@@ -101,6 +125,9 @@ const Navbar = () => {
               }}
             >
               <TbSearch />
+            </span>
+            <span className="sign-in-icon" onClick={handleSignIn}>
+              <FiUser />
             </span>
             <span
               onClick={() => {
