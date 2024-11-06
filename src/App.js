@@ -12,6 +12,7 @@ import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import SuccessPage from './components/SuccessPage/SuccessPage';
 import ProductPage from './components/productpage/productpage';
+import AuthForm from './components/Login/AuthForm';
 
 function App() {
   useEffect(() => {
@@ -44,6 +45,7 @@ function App() {
             <Route path='/Electronics' element={<Electronics />} />
             <Route path='/Mobandaccess' element={<Mobandaccess />} />
             <Route path='/More' element={<More />} />
+            <Route path="/login" element={<AuthForm />} />
             <Route path="/category/:id" element={<Category />} />
             <Route path="/product/:id" element={<SingleProduct />} />
             <Route path='/success' element={<SuccessPage/>} />
