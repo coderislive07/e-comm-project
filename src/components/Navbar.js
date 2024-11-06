@@ -1,14 +1,12 @@
-import React, { useContext, useState } from "react";
+import React, { useState, useEffect } from "react";
 import Cart from "./Cart/Cart";
 import Search from "./Search/Search";
-import { NavLink } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { TbSearch } from "react-icons/tb";
 import { FaTimes } from "react-icons/fa";
 import { FiGrid } from "react-icons/fi";
 import { BsCart } from "react-icons/bs";
 import "./NavbarStyles.css";
-import { Context } from "../utils/context";
 
 const nav_links = [
   {
@@ -34,12 +32,24 @@ const Navbar = () => {
   const [clicked, setClicked] = useState(false);
   const [showCart, setShowCart] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
-  // const handleClick = () => setClick(!click)
-
-  const { cartCount } = useContext(Context);
-
-  //my code start
+  const [cartCount, setCartCount] = useState(0);
   const [color, setColor] = useState(false);
+
+  useEffect(() => {
+    const updateCartCount = () => {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const count = cart.reduce((total, item) => total + item.quantity, 0);
+      setCartCount(count);
+    };
+
+    updateCartCount();
+    window.addEventListener('cartUpdated', updateCartCount);
+
+    return () => {
+      window.removeEventListener('cartUpdated', updateCartCount);
+    };
+  }, []);
+
   const changeColor = () => {
     if (window.scrollY >= 90) {
       setColor(true);
@@ -49,8 +59,6 @@ const Navbar = () => {
   };
 
   window.addEventListener("scroll", changeColor);
-
-  //my code end
 
   const menuList = nav_links.map(({ url, title }, index) => {
     return (

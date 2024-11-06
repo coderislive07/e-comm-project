@@ -1,4 +1,9 @@
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
+
 export default function Electronics() {
+  const navigate = useNavigate()
+
   const products = [
     { id: 1, name: "Zebronics Zeb-Transformer-M Wireless Keyboard Mouse Combo", price: 1099.00, rating: 4, image: "https://m.media-amazon.com/images/I/61KZWPeNgHL._AC_UL480_FMwebp_QL65_.jpg" },
     { id: 2, name: "HP 255 G8 Laptop", price: 3599.00, rating: 4, image: "https://m.media-amazon.com/images/I/51hZtBRUFBL._AC_UL480_FMwebp_QL65_.jpg" },
@@ -18,28 +23,35 @@ export default function Electronics() {
     { id: 16, name: "Cosmic Byte CB-GK-16 Firefly RGB Mechanical Keyboard", price: 2499.00, rating: 4, image: "https://m.media-amazon.com/images/I/61EsJy5XPBL._AC_UL480_FMwebp_QL65_.jpg" },
   ]
 
+  const handleProductClick = (productId) => {
+    navigate(`/productpage/${productId}`)
+  }
+
   return (
     <div style={{maxWidth: '1200px', margin: '0 auto', padding: '132px 16px'}}>
       <h1 style={{fontSize: '28px', fontWeight: 'bold', marginBottom: '32px', textAlign: 'center'}}>Top Trending Deals</h1>
       <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '24px'}}>
         {products.map((product) => (
-          <div key={product.id} style={{
-            position: 'relative',
-            backgroundColor: '#1e1e1e',
-            borderRadius: '8px',
-            overflow: 'hidden',
-            transition: 'all 0.3s ease',
-            cursor: 'pointer',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = 'translateY(-5px)';
-            e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.2)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = 'translateY(0)';
-            e.currentTarget.style.boxShadow = 'none';
-          }}
+          <div 
+            key={product.id} 
+            style={{
+              position: 'relative',
+              backgroundColor: '#1e1e1e',
+              borderRadius: '8px',
+              overflow: 'hidden',
+              transition: 'all 0.3s ease',
+              cursor: 'pointer',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+            }}
+            onClick={() => handleProductClick(product.id)}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'translateY(-5px)';
+              e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.2)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = 'none';
+            }}
           >
             <button 
               style={{
@@ -53,6 +65,10 @@ export default function Electronics() {
                 border: 'none',
                 cursor: 'pointer',
                 transition: 'all 0.2s ease',
+              }}
+              onClick={(e) => {
+                e.stopPropagation();
+                alert('Added to wishlist!');
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'scale(1.1)';
